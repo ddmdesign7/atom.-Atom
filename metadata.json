@@ -1,0 +1,6 @@
+{
+  "name": "Bio Balance",
+  "description": "Biomarker and wellness tracking platform with health metrics, lab file management, and personalized balance insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
