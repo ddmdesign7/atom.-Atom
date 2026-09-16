@@ -1,43 +1,21 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+-- Insert profile
+INSERT INTO profile (email, password, profile_name, email_address, available_balance, withdrawal_notification)
+VALUES (
+  'Berginjoshua1@gmail.com',
+  'Thatguy12@',
+  'Joshua James Bergin',
+  'Berginjoshua1@gmail.com',
+  47986.00,
+  'A fee of $5,960.00 must be paid before the available balance can be withdrawn, in accordance with investment requirements.'
+);
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+-- Insert transactions
+INSERT INTO transactions (date, deposited, invested, withdrawn, profit, fee, reinvested_on) VALUES
+('2019-03-08', 5000.00, NULL, 11750.00, NULL, 1586.00, NULL),
+('2019-10-29', NULL, 4000.00, 12000.00, NULL, 1264.00, NULL),
+('2020-01-06', NULL, 500.00, 2000.00, NULL, 300.00, NULL),
+('2020-07-14', NULL, 7000.00, 16000.00, NULL, 2000.00, NULL),
+('2021-02-10', NULL, 1000.00, 4000.00, NULL, 700.00, NULL),
+('2021-09-20', NULL, 10000.00, 31000.00, NULL, 3900.00, NULL),
+('2022-01-05', NULL, 6000.00, 14000.00, NULL, 1800.00, NULL),
+('2022-04-12', NULL, 4000.00, NULL, 12000.00, NULL, '2022-07-07');
